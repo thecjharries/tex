@@ -1,0 +1,14 @@
+Navigate to the root directory of your project.
+
+First time:
+\begin{lstlisting}[language=bash]
+~/sntai_core$ composer install
+\end{lstlisting}
+Any other time:
+\begin{lstlisting}[language=bash]
+~/sntai_core$ composer update
+\end{lstlisting}
+Hard way:
+\begin{lstlisting}[language=bash]
+~/sntai_core$ php composer.phar install/update
+\end{lstlisting}

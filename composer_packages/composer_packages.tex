@@ -1,0 +1,354 @@
+\documentclass[pdf]{beamer}
+\usetheme{Warsaw}
+\definecolor{links}{HTML}{2A1B81}
+\hypersetup{colorlinks,linkcolor=,urlcolor=links}
+\usepackage{xcolor}%
+% Listings config CC-BY-SA CJ Harries 2015
+% JSON config http://tex.stackexchange.com/questions/83085/how-to-improve-listings-display-of-json-files
+\usepackage{listings}%
+\colorlet{punct}{red!60!black}%
+\definecolor{background}{HTML}{EEEEEE}%
+\definecolor{delim}{RGB}{20,105,176}%
+\colorlet{numb}{magenta!60!black}%
+\lstdefinelanguage{json}{
+    literate=
+     *{0}{{{\color{numb}0}}}{1}
+      {1}{{{\color{numb}1}}}{1}
+      {2}{{{\color{numb}2}}}{1}
+      {3}{{{\color{numb}3}}}{1}
+      {4}{{{\color{numb}4}}}{1}
+      {5}{{{\color{numb}5}}}{1}
+      {6}{{{\color{numb}6}}}{1}
+      {7}{{{\color{numb}7}}}{1}
+      {8}{{{\color{numb}8}}}{1}
+      {9}{{{\color{numb}9}}}{1}
+      {:}{{{\color{punct}{:}}}}{1}
+      {,}{{{\color{punct}{,}}}}{1}
+      {\{}{{{\color{delim}{\{}}}}{1}
+      {\}}{{{\color{delim}{\}}}}}{1}
+      {[}{{{\color{delim}{[}}}}{1}
+      {]}{{{\color{delim}{]}}}}{1},
+}
+\lstset{
+	% Basic design
+    basicstyle={\small\ttfamily},   
+    frame=l,
+    % Line numbers
+    xleftmargin={0.75cm},
+    numbers=left,
+    stepnumber=1,
+    firstnumber=1,
+    numberfirstline=true,
+    tabsize=2,
+    showtabs=false,
+    showspaces=false,
+    showstringspaces=false,
+    extendedchars=true,
+    breaklines=true, 
+}
+\newcommand{\com}[1]{\lstinline$#1$}
+
+\mode<presentation>{}
+\title{Composer Packages}
+\author{CJ Harries}
+\date{1/19/15}
+
+\begin{document}
+\begin{frame}
+\titlepage
+\end{frame}
+
+\section{Introduction}
+\subsection{What is Composer?}
+\begin{frame}
+\href{https://getcomposer.org/}{Composer} is a dependency manager for PHP. It allows developers to automatically load and use external code without manually moving and updating files. It is the core of many PHP frameworks, including Laravel.
+\end{frame}
+
+\subsection{How do I install Composer?}
+\begin{frame}[fragile]
+With curl:
+\begin{lstlisting}[language=bash]
+curl -sS https://getcomposer.org/installer | php
+\end{lstlisting}
+Without curl:
+\begin{lstlisting}[language=bash]
+php -r "readfile('https://getcomposer.org/installer');" | php
+\end{lstlisting}
+Options are \href{https://getcomposer.org/download/}{here}.
+\end{frame}
+
+\subsection{How do I make Composer easy to use?}
+\begin{frame}[fragile]
+With decent operating systems:
+\begin{lstlisting}[language=bash]
+mv composer.phar /usr/local/bin/composer
+\end{lstlisting}
+(Note: on some versions of OSX you might also need to run \com{mkdir -p /usr/local/bin} before the above will work)
+
+Without decent operating systems:
+\begin{lstlisting}
+google.com
+\end{lstlisting}
+\end{frame}
+
+\subsection{How do I use Composer?}
+\begin{frame}[fragile]
+Easy way:
+\begin{lstlisting}[language=bash]
+composer --help
+\end{lstlisting}
+Hard way:
+\begin{lstlisting}[language=bash]
+php composer.phar --help
+\end{lstlisting}
+\end{frame}
+
+\section{\com{composer.json}}
+\subsection{What is \com{composer.json}?}
+\begin{frame}
+\com{composer.json} contains all of the information your project needs to describe itself and load dependencies. It's similar to RequireJS's \com{main.js} or Android's Gradle system. Your project needs one, your library needs one, and your external dependencies come with one.
+
+It lives in the root directory. If it's not there, Composer can't find it.
+\end{frame}
+
+\subsection{What does \com{composer.json} look like?}
+\begin{frame}[fragile]
+\begin{lstlisting}[language=json]
+{
+  "name": "sntai/core",
+  "version": "0.0.00",
+  "description": "Core AI functionality",
+  "type": "library",
+  "license": "Proprietary-SNT",
+  "keywords": ["ai"],
+  "authors": [
+    {
+      "name": "CJ Harries",
+      "email": "cjharries@sntmedia.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "SNTAI\\Core\\" : "src"
+    }
+  }
+}
+\end{lstlisting}
+\end{frame}
+\begin{frame}[fragile]
+\begin{lstlisting}[language=json]
+{
+  "name": "sntai/apifin",
+  "version": "0.0.00",
+  "description": "API AI FIN",
+  "type": "library",
+  "license": "Proprietary-SNT",
+  "keywords": ["ai"],
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/passfail-cjharries/sntai_core"
+    }
+  ],
+  "require": {
+    "sntai/core": "dev-master"
+  }
+}
+\end{lstlisting}
+\end{frame}
+
+\subsection{What can I do with \com{composer.json}?}
+\begin{frame}
+Like any configuration file, \com{composer.json} gives you the option to define
+\begin{itemize}
+\item Project information (author, version, license, etc.)
+\item Exports and configuration (autoloading, standards, unit tests, etc.)
+\item Dependencies (other composer packages, VCS, local files, etc.)
+\end{itemize}
+\end{frame}
+
+\subsection{Why do I want to make a \com{composer.json}?}
+\begin{frame}
+\textbf{You don't have to ctrl+c/ctrl+v code.}
+\end{frame}
+
+\section{Making a Composer package}
+\subsection{What should a Composer package look like?}
+\begin{frame}[fragile]
+Make a new directory for your project and organize your files in a way that makes sense, with a \com{composer.json} in the root directory.
+\begin{lstlisting}
+/sntai_core
+	/src
+		AiCache.php
+	/views
+		SomeHtml.html
+	/tests
+		testAiCache.php
+composer.json
+\end{lstlisting}
+\end{frame}
+\subsection{How do I load the files?}
+\begin{frame}[fragile]
+Add source and tests to \com{composer.json} (along with any other exports)
+\begin{lstlisting}[language=json]
+{
+  ...
+  "autoload": {
+    "psr-4": { "SNTAI\\Core\\": "src" }
+  },
+  "autoload-dev": {
+    "psr-4: { "SNTAIT\\Core\\Tests\\" : "tests" }
+  },
+  ...
+}
+\end{lstlisting}
+\end{frame}
+\subsection{How do does Composer know what my package is?}
+\begin{frame}[fragile]
+Name and version (if you like that sort of thing) it
+\begin{lstlisting}[language=json]
+{
+  ...
+  "name": "sntai/core",
+  "version": "0.0.01",
+  ...
+}
+\end{lstlisting}
+\end{frame}
+\subsection{Can I name it anything?}
+\begin{frame}[fragile]
+(Optional) Alias the branches you want to create through \com{git}
+\begin{lstlisting}[language=json]
+{
+  ...
+  "extra": {
+    "branch-alias": {
+      "prod": "development"
+    }
+  },
+  ...
+}
+\end{lstlisting}
+\end{frame}
+\subsection{Where should I put my package?}
+\begin{frame}[fragile]
+Do the \com{git} thing
+\begin{lstlisting}[language=bash]
+~/sntai_core$ git init
+~/sntai_core$ git remote add origin https://github.com/passit/sntai_core.git
+~/sntai_core$ git push -u origin master
+\end{lstlisting}
+You can also add your package to \href{https://packagist.org/}{Packagist}, but you probably shouldn't do that with proprietary code.
+\end{frame}
+
+\section{Linking Composer packages}
+\subsection{How do I convert an existing project?}
+\begin{frame}[fragile]
+Navigate to the root directory and make a new \com{composer.json} with any package information you want to add.
+\begin{lstlisting}
+// You've seen this before
+\end{lstlisting}
+\end{frame}
+\begin{frame}[fragile]
+You'll probably want to update your \com{.gitignore} to add the \com{vendor} directory. If you don't, you'll pollute your repos with external code.
+\begin{lstlisting}
+vendor
+/vendor/
+vendor/*
+# You have the power
+\end{lstlisting}
+\end{frame}
+
+\subsection{How do I link my other packages?}
+\begin{frame}
+Composer is incredibly powerful in that it can pull from Packagist, local sources, VCS, and basically anything \href{https://getcomposer.org/doc/02-libraries.md}{you try to}. Composer can even \href{https://getcomposer.org/doc/articles/http-basic-authentication.md}{connect to your own private repos} with some fiddling.
+\end{frame}
+\begin{frame}[fragile]
+\begin{description}
+\item[Packagist] is the easiest to use.
+\end{description}
+\begin{lstlisting}[language=json]
+{
+  ...
+  "require": {
+    "monolog/monolog": "1.0.*"
+  },
+  ...
+}
+\end{lstlisting}
+\end{frame}
+\begin{frame}[fragile]
+\begin{description}
+\item[git] isn't too hard either. Notice the \com{dev-} in \com{dev-master}.
+\end{description}
+\begin{lstlisting}[language=json]
+{
+  ...
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/passit/sntai_core"
+    }
+  ],
+  "require": {
+    "sntai/core": "dev-master"
+  },
+  ...
+}
+\end{lstlisting}
+\end{frame}
+\begin{frame}[fragile]
+\begin{description}
+\item[Private repos] work as well (with some tweaking and potentially some ssh-fu). Notice the \com{dev-} in \com{dev-master}.
+\end{description}
+\begin{lstlisting}[language=json]
+{
+  ...
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "git@github.com:passit/sntai_core.git"
+    }
+  ],
+  "require": {
+    "sntai/core": "dev-master"
+  },
+  ...
+}
+\end{lstlisting}
+\end{frame}
+\subsection{How do I update dependencies?}
+\begin{frame}[fragile]
+Navigate to the root directory of your project.
+
+First time:
+\begin{lstlisting}[language=bash]
+~/sntai_core$ composer install
+\end{lstlisting}
+Any other time:
+\begin{lstlisting}[language=bash]
+~/sntai_core$ composer update
+\end{lstlisting}
+Hard way:
+\begin{lstlisting}[language=bash]
+~/sntai_core$ php composer.phar install/update
+\end{lstlisting}
+\end{frame}
+\section{Other stuff}
+\subsection{What's next?}
+\begin{frame}
+\begin{itemize}
+\item Using Composer \href{https://getcomposer.org/doc/03-cli.md}{from the command line} is very powerful.
+\item The \href{https://getcomposer.org/doc/04-schema.md}{\com{composer.json} schema} has tons of options.
+\item \href{https://www.google.com/webhp?q=composer+tricks}{The internet} has some nice things to say about Composer.
+\end{itemize}
+\end{frame}
+\subsection{Sources}
+\begin{frame}
+\begin{itemize}
+\item \href{https://getcomposer.org/doc/}{Composer docs}
+\item \href{https://stackoverflow.com}{StackOverflow}
+\item \href{https://google.com}{Google}
+\end{itemize}
+\end{frame}
+\end{document}

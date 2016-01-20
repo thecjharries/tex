@@ -1,0 +1,87 @@
+\beamer@endinputifotherversion {3.36pt}
+\headcommand {\slideentry {0}{0}{1}{1/1}{}{0}}
+\headcommand {\beamer@framepages {1}{1}}
+\headcommand {\sectionentry {1}{Introduction}{2}{Introduction}{0}}
+\headcommand {\beamer@sectionpages {1}{1}}
+\headcommand {\beamer@subsectionpages {1}{1}}
+\headcommand {\beamer@subsectionentry {0}{1}{1}{2}{What is Composer?}}\headcommand {\beamer@subsectionpages {2}{1}}
+\headcommand {\slideentry {1}{1}{1}{2/2}{What is Composer?}{0}}
+\headcommand {\beamer@framepages {2}{2}}
+\headcommand {\beamer@subsectionentry {0}{1}{2}{3}{How do I install Composer?}}\headcommand {\beamer@subsectionpages {2}{2}}
+\headcommand {\slideentry {1}{2}{1}{3/3}{How do I install Composer?}{0}}
+\headcommand {\beamer@framepages {3}{3}}
+\headcommand {\beamer@subsectionentry {0}{1}{3}{4}{How do I make Composer easy to use?}}\headcommand {\beamer@subsectionpages {3}{3}}
+\headcommand {\slideentry {1}{3}{1}{4/4}{How do I make Composer easy to use?}{0}}
+\headcommand {\beamer@framepages {4}{4}}
+\headcommand {\beamer@subsectionentry {0}{1}{4}{5}{How do I use Composer?}}\headcommand {\beamer@subsectionpages {4}{4}}
+\headcommand {\slideentry {1}{4}{1}{5/5}{How do I use Composer?}{0}}
+\headcommand {\beamer@framepages {5}{5}}
+\headcommand {\sectionentry {2}{\lstinline $composer.json$}{6}{\lstinline $composer.json$}{0}}
+\headcommand {\beamer@sectionpages {2}{5}}
+\headcommand {\beamer@subsectionpages {5}{5}}
+\headcommand {\beamer@subsectionentry {0}{2}{1}{6}{What is \lstinline $composer.json$?}}\headcommand {\beamer@subsectionpages {6}{5}}
+\headcommand {\slideentry {2}{1}{1}{6/6}{What is \lstinline $composer.json$?}{0}}
+\headcommand {\beamer@framepages {6}{6}}
+\headcommand {\beamer@subsectionentry {0}{2}{2}{7}{What does \lstinline $composer.json$ look like?}}\headcommand {\beamer@subsectionpages {6}{6}}
+\headcommand {\slideentry {2}{2}{1}{7/7}{What does \lstinline $composer.json$ look like?}{0}}
+\headcommand {\beamer@framepages {7}{7}}
+\headcommand {\slideentry {2}{2}{2}{8/8}{What does \lstinline $composer.json$ look like?}{0}}
+\headcommand {\beamer@framepages {8}{8}}
+\headcommand {\beamer@subsectionentry {0}{2}{3}{9}{What can I do with \lstinline $composer.json$?}}\headcommand {\beamer@subsectionpages {7}{8}}
+\headcommand {\slideentry {2}{3}{1}{9/9}{What can I do with \lstinline $composer.json$?}{0}}
+\headcommand {\beamer@framepages {9}{9}}
+\headcommand {\beamer@subsectionentry {0}{2}{4}{10}{Why do I want to make a \lstinline $composer.json$?}}\headcommand {\beamer@subsectionpages {9}{9}}
+\headcommand {\slideentry {2}{4}{1}{10/10}{Why do I want to make a \lstinline $composer.json$?}{0}}
+\headcommand {\beamer@framepages {10}{10}}
+\headcommand {\sectionentry {3}{Making a Composer package}{11}{Making a Composer package}{0}}
+\headcommand {\beamer@sectionpages {6}{10}}
+\headcommand {\beamer@subsectionpages {10}{10}}
+\headcommand {\beamer@subsectionentry {0}{3}{1}{11}{What should a Composer package look like?}}\headcommand {\beamer@subsectionpages {11}{10}}
+\headcommand {\slideentry {3}{1}{1}{11/11}{What should a Composer package look like?}{0}}
+\headcommand {\beamer@framepages {11}{11}}
+\headcommand {\beamer@subsectionentry {0}{3}{2}{12}{How do I load the files?}}\headcommand {\beamer@subsectionpages {11}{11}}
+\headcommand {\slideentry {3}{2}{1}{12/12}{How do I load the files?}{0}}
+\headcommand {\beamer@framepages {12}{12}}
+\headcommand {\beamer@subsectionentry {0}{3}{3}{13}{How do does Composer know what my package is?}}\headcommand {\beamer@subsectionpages {12}{12}}
+\headcommand {\slideentry {3}{3}{1}{13/13}{How do does Composer know what my package is?}{0}}
+\headcommand {\beamer@framepages {13}{13}}
+\headcommand {\beamer@subsectionentry {0}{3}{4}{14}{Can I name it anything?}}\headcommand {\beamer@subsectionpages {13}{13}}
+\headcommand {\slideentry {3}{4}{1}{14/14}{Can I name it anything?}{0}}
+\headcommand {\beamer@framepages {14}{14}}
+\headcommand {\beamer@subsectionentry {0}{3}{5}{15}{Where should I put my package?}}\headcommand {\beamer@subsectionpages {14}{14}}
+\headcommand {\slideentry {3}{5}{1}{15/15}{Where should I put my package?}{0}}
+\headcommand {\beamer@framepages {15}{15}}
+\headcommand {\sectionentry {4}{Linking Composer packages}{16}{Linking Composer packages}{0}}
+\headcommand {\beamer@sectionpages {11}{15}}
+\headcommand {\beamer@subsectionpages {15}{15}}
+\headcommand {\beamer@subsectionentry {0}{4}{1}{16}{How do I convert an existing project?}}\headcommand {\beamer@subsectionpages {16}{15}}
+\headcommand {\slideentry {4}{1}{1}{16/16}{How do I convert an existing project?}{0}}
+\headcommand {\beamer@framepages {16}{16}}
+\headcommand {\slideentry {4}{1}{2}{17/17}{How do I convert an existing project?}{0}}
+\headcommand {\beamer@framepages {17}{17}}
+\headcommand {\beamer@subsectionentry {0}{4}{2}{18}{How do I link my other packages?}}\headcommand {\beamer@subsectionpages {16}{17}}
+\headcommand {\slideentry {4}{2}{1}{18/18}{How do I link my other packages?}{0}}
+\headcommand {\beamer@framepages {18}{18}}
+\headcommand {\slideentry {4}{2}{2}{19/19}{How do I link my other packages?}{0}}
+\headcommand {\beamer@framepages {19}{19}}
+\headcommand {\slideentry {4}{2}{3}{20/20}{How do I link my other packages?}{0}}
+\headcommand {\beamer@framepages {20}{20}}
+\headcommand {\slideentry {4}{2}{4}{21/21}{How do I link my other packages?}{0}}
+\headcommand {\beamer@framepages {21}{21}}
+\headcommand {\beamer@subsectionentry {0}{4}{3}{22}{How do I update dependencies?}}\headcommand {\beamer@subsectionpages {18}{21}}
+\headcommand {\slideentry {4}{3}{1}{22/22}{How do I update dependencies?}{0}}
+\headcommand {\beamer@framepages {22}{22}}
+\headcommand {\sectionentry {5}{Other stuff}{23}{Other stuff}{0}}
+\headcommand {\beamer@sectionpages {16}{22}}
+\headcommand {\beamer@subsectionpages {22}{22}}
+\headcommand {\beamer@subsectionentry {0}{5}{1}{23}{What's next?}}\headcommand {\beamer@subsectionpages {23}{22}}
+\headcommand {\slideentry {5}{1}{1}{23/23}{What's next?}{0}}
+\headcommand {\beamer@framepages {23}{23}}
+\headcommand {\beamer@subsectionentry {0}{5}{2}{24}{Sources}}\headcommand {\beamer@subsectionpages {23}{23}}
+\headcommand {\slideentry {5}{2}{1}{24/24}{Sources}{0}}
+\headcommand {\beamer@framepages {24}{24}}
+\headcommand {\beamer@partpages {1}{24}}
+\headcommand {\beamer@subsectionpages {24}{24}}
+\headcommand {\beamer@sectionpages {23}{24}}
+\headcommand {\beamer@documentpages {24}}
+\headcommand {\def \inserttotalframenumber {24}}

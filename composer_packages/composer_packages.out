@@ -1,0 +1,23 @@
+\BOOKMARK [2][]{Outline0.1}{Introduction}{}% 1
+\BOOKMARK [3][]{Outline0.1.1.2}{What is Composer?}{Outline0.1}% 2
+\BOOKMARK [3][]{Outline0.1.2.3}{How do I install Composer?}{Outline0.1}% 3
+\BOOKMARK [3][]{Outline0.1.3.4}{How do I make Composer easy to use?}{Outline0.1}% 4
+\BOOKMARK [3][]{Outline0.1.4.5}{How do I use Composer?}{Outline0.1}% 5
+\BOOKMARK [2][]{Outline0.2}{composer.json}{}% 6
+\BOOKMARK [3][]{Outline0.2.1.6}{What is composer.json?}{Outline0.2}% 7
+\BOOKMARK [3][]{Outline0.2.2.7}{What does composer.json look like?}{Outline0.2}% 8
+\BOOKMARK [3][]{Outline0.2.3.9}{What can I do with composer.json?}{Outline0.2}% 9
+\BOOKMARK [3][]{Outline0.2.4.10}{Why do I want to make a composer.json?}{Outline0.2}% 10
+\BOOKMARK [2][]{Outline0.3}{Making a Composer package}{}% 11
+\BOOKMARK [3][]{Outline0.3.1.11}{What should a Composer package look like?}{Outline0.3}% 12
+\BOOKMARK [3][]{Outline0.3.2.12}{How do I load the files?}{Outline0.3}% 13
+\BOOKMARK [3][]{Outline0.3.3.13}{How do does Composer know what my package is?}{Outline0.3}% 14
+\BOOKMARK [3][]{Outline0.3.4.14}{Can I name it anything?}{Outline0.3}% 15
+\BOOKMARK [3][]{Outline0.3.5.15}{Where should I put my package?}{Outline0.3}% 16
+\BOOKMARK [2][]{Outline0.4}{Linking Composer packages}{}% 17
+\BOOKMARK [3][]{Outline0.4.1.16}{How do I convert an existing project?}{Outline0.4}% 18
+\BOOKMARK [3][]{Outline0.4.2.18}{How do I link my other packages?}{Outline0.4}% 19
+\BOOKMARK [3][]{Outline0.4.3.22}{How do I update dependencies?}{Outline0.4}% 20
+\BOOKMARK [2][]{Outline0.5}{Other stuff}{}% 21
+\BOOKMARK [3][]{Outline0.5.1.23}{What's next?}{Outline0.5}% 22
+\BOOKMARK [3][]{Outline0.5.2.24}{Sources}{Outline0.5}% 23
